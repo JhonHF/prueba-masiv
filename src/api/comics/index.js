@@ -5,15 +5,6 @@ class ApiComics {
     this.client = client;
   }
 
-  getOneComic = async (id) => {
-    try {
-    const { data } = await this.client.get(`/${id}/info.0.json`);
-      return comicMapper(data);
-    } catch (error) {
-      alert("Error al consultar el comic");
-    }
-  };
-
   getRandomComic = async () => {
     const random = Math.floor(Math.random() * (2455 - 1)) + 1;
     try {
